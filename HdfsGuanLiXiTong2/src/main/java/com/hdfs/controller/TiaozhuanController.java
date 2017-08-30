@@ -13,4 +13,11 @@ public class TiaozhuanController {
 		
 	}
 
+	@RequestMapping("asda")
+	public String asda(){
+		System.out.println("asdas ");
+		return "index";
+		
+	}
+
 }

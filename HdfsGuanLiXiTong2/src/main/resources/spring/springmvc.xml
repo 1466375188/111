@@ -40,10 +40,8 @@
 		<property name="order" value="0" />
 	</bean>
 
-	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
-	<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
-	<mvc:resources location="/img/" mapping="/img/**"></mvc:resources>
-
+	<mvc:resources location="/control/" mapping="/control/**"></mvc:resources>
+	<mvc:resources location="/core/" mapping="/core/**"></mvc:resources>
 
 	<!-- 支持上传文件 -->
 	<bean id="multipartResolver"
