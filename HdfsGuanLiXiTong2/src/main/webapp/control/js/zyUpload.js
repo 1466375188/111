@@ -48,7 +48,6 @@
 			this.createHtml = function(){
 				var multiple = "";  // 设置多选的参数
 				para.multiple ? multiple = "multiple" : multiple = "";
-				alert(multiple)
 				var html= '';
 				
 				if(para.dragDrop){

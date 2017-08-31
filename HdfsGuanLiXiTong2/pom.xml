@@ -27,6 +27,19 @@
 		<net.sourceforge.jexcelapi.version>2.6.12</net.sourceforge.jexcelapi.version>
 	</properties>
 	<dependencies>
+	
+	<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-client</artifactId>
+			<version>2.7.3</version>
+		</dependency>
 		<!-- 单元测试工具junit -->
 		<dependency>
 			<groupId>junit</groupId>
