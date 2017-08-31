@@ -15,31 +15,54 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Request;
 
+import org.apache.hadoop.classification.InterfaceAudience.Private;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.hdfs.entity.User;
 import com.hdfs.entity.Xianshi;
+import com.hdfs.service.UserService;
+
+import net.sf.jsqlparser.statement.create.table.Index;
 
 
 @Controller
 @RequestMapping("/")
 public class TiaozhuanController {
-
+	@Autowired
+    private UserService uService;	
 	@RequestMapping("tiaozhuan")
-	public String tiaozhuan() {
+	public String tiaozhuan(){
 		return "index";
-
+		
 	}
-	
+
+	@RequestMapping("login")
+	public String login(User user,HttpServletRequest request,String name,String pwd) throws IOException, InterruptedException, URISyntaxException{
+		System.out.println(name+pwd);
+		user.setName(name);
+		List list=uService.login(user);
+		if (list.size()!=0) {
+			User user1=(User)list.get(0);
+			if(user1!=null&&user1.getPwd().equals(pwd)){
+				request.setAttribute("user1", user1);
+				System.out.println("");
+				return testls( request);
+			}		
+		}
+								
+		return "error";
+	}
 	//上传
 	@RequestMapping("asda")
 	@ResponseBody
@@ -117,7 +140,6 @@ public class TiaozhuanController {
 	
 		//下载
 	@RequestMapping("xiazai")
-	@ResponseBody
 	public String test007(HttpServletRequest request,String name) throws Exception {
 		//String name=(String) request.getAttribute("name");
 		System.out.println(name);
@@ -135,7 +157,7 @@ public class TiaozhuanController {
 
 		fileOutputStream.close();
 		inputStream.close();
-		return "";
+		return "chenggong";
 	}
 	
 }
