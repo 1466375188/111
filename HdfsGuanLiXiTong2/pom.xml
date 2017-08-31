@@ -140,11 +140,13 @@
 			<version>${c3p0.version}</version>
 		</dependency>
 		<!-- JSP相关 -->
-		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>jstl</artifactId> 
-			<version>${jstl.version}</version> </dependency> <dependency> <groupId>javax.servlet</groupId> 
-			<artifactId>servlet-api</artifactId> <version>${servlet-api.version}</version> 
-			</dependency> <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>jsp-api</artifactId> 
-			<version>${jsp-api.version}</version> </dependency> -->
+		<dependency> <groupId>javax.servlet</groupId> <artifactId>jstl</artifactId> 
+			<version>${jstl.version}</version><scope>provided</scope> </dependency> 
+			<dependency> <groupId>javax.servlet</groupId> 
+			<artifactId>servlet-api</artifactId> <version>${servlet-api.version}</version> <scope>provided</scope>
+			</dependency> 
+			<dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>jsp-api</artifactId> 
+			<version>${jsp-api.version}</version><scope>provided</scope> </dependency>
 		<!-- freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
