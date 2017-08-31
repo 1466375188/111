@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="tiaozhuan.do">啦阿拉</a>
+<a href="chakan.do">啦阿拉</a>
 </body>
 </html>
