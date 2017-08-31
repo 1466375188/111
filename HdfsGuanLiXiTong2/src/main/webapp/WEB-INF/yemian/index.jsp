@@ -16,8 +16,6 @@
 </head>
 <body>
 <h1 style="text-align:center;">Upload</h1>
-
 <div id="demo" class="demo"></div>
-<center><button><a href="chakan.do">返回首页</a></button></center>
 </body>
 </html>
